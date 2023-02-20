@@ -4,7 +4,7 @@ Graph2Topic is a topic model based on PLMs and community detections. Our approac
 pip install graph2topictm
 pip install 
 ## Use example:
-from graph2topictm import graph2topictm
+'''from graph2topictm import graph2topictm
 import time
 from utils import *
 
@@ -19,7 +19,7 @@ start_time = time.time()
 tm.train()
 train_time = time.time()
 print(f"Runtime of model:{round(train_time-start_time,4)}")
-td_score, cv_score, npmi_score = tm.evaluate()
+td_score, cv_score, npmi_score = tm.evaluate()'''
 
 ## Parameter of Class Graph2TopicTM:
 1. topic_model: topic model being used, g2t only
