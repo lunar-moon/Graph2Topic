@@ -21,7 +21,7 @@ train_time = time.time()
 print(f"Runtime of model:{round(train_time-start_time,4)}")
 td_score, cv_score, npmi_score = tm.evaluate()
 
-## Parameter of Graph2TopicTM
+## Parameter of Class Graph2TopicTM
 
 1. topic_model: topic model being used, g2t only
 2. word_select_method: approaches for selecting topic words
