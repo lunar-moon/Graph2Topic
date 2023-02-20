@@ -41,7 +41,7 @@ td_score, cv_score, npmi_score = tm.evaluate()
     8. SLPA
 4. pretrained_model: PLMs for encoding texts, princeton-nlp/unsup-simcse-bert-base-uncased is recommended
 5. seed: random seed
-6. dataset: A list of documents, 20ng, m10, bbc, crr, beer, asap, nlpcc & nlpcc_c are provided
+6. dataset: A list of documents, some datasets(20ng, m10, bbc, crr, beer, asap, nlpcc & nlpcc_c) are provided
 7. num_topics: number of topic would be showed
 8. dim_size: dimensions would be reduced
   
