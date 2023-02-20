@@ -1,8 +1,27 @@
 # Graph2Topic
 Graph2Topic is a topic model based on PLMs and community detections. Our approach is able to get high quality topics without pre-specifying the number of topics. 
-## Using
+## prepare
+pip install graph2topictm
+pip install 
+## use example:
+from graph2topictm import graph2topictm
+import time
+from utils import *
 
-python main.py --topic_model g2t --word_select_method tfidf_idfi --graph_method greedy_modularity --pretrained_model princeton-nlp/unsup-simcse-bert-base-uncased --seed 30 --dataset bbc --num_topics 10 --dim_size 5
+dataset, sentences = prepare_dataset('bbc')
+print(f'Using dataset: {dataset}, number of documents: {len(sentences)}')
+
+token_lists = dataset.get_corpus()
+sentences = [' '.join(text_list) for text_list in token_lists]
+tm = graph2topictm.Graph2TopicTM(dataset=sentences, 
+                embedding='princeton-nlp/unsup-simcse-bert-base-uncased')
+start_time = time.time()
+tm.train()
+train_time = time.time()
+print(f"Runtime of model:{round(train_time-start_time,4)}")
+td_score, cv_score, npmi_score = tm.evaluate()
+
+## Parameter of Graph2TopicTM
 
 1. topic_model: topic model being used, g2t only
 2. word_select_method: approaches for selecting topic words
@@ -21,7 +40,7 @@ python main.py --topic_model g2t --word_select_method tfidf_idfi --graph_method 
     8. SLPA
 4. pretrained_model: PLMs for encoding texts, princeton-nlp/unsup-simcse-bert-base-uncased is recommended
 5. seed: random seed
-6. dataset: 20ng, m10, bbc, crr, beer, asap, nlpcc & nlpcc_c are provide
+6. dataset: A list of documents, 20ng, m10, bbc, crr, beer, asap, nlpcc & nlpcc_c are provided
 7. num_topics: number of topic would be showed
 8. dim_size: dimensions would be reduced
   
