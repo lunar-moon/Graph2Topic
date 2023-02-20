@@ -22,6 +22,6 @@ python main.py --topic_model g2t --word_select_method tfidf_idfi --graph_method 
 4. pretrained_model: PLMs for encoding texts, princeton-nlp/unsup-simcse-bert-base-uncased is recommended
 5. seed: random seed
 6. dataset: 20ng, m10, bbc, crr, beer, asap, nlpcc & nlpcc_c are provide
-7. num_topics: number of topic would be show
+7. num_topics: number of topic would be showed
 8. dim_size: dimensions would be reduced
   
