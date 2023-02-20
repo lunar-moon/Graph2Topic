@@ -4,7 +4,8 @@ Graph2Topic is a topic model based on PLMs and community detections. Our approac
 pip install graph2topictm
 pip install 
 ## Use example:
-''' from graph2topictm import graph2topictm
+''' 
+from graph2topictm import graph2topictm
 import time
 from utils import *
 
