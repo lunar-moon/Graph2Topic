@@ -1,9 +1,9 @@
 # Graph2Topic
 Graph2Topic is a topic model based on PLMs and community detections. Our approach is able to get high quality topics without pre-specifying the number of topics. 
-## prepare
+## Prepare:
 pip install graph2topictm
 pip install 
-## use example:
+## Use example:
 from graph2topictm import graph2topictm
 import time
 from utils import *
@@ -21,8 +21,7 @@ train_time = time.time()
 print(f"Runtime of model:{round(train_time-start_time,4)}")
 td_score, cv_score, npmi_score = tm.evaluate()
 
-## Parameter of Class Graph2TopicTM
-
+## Parameter of Class Graph2TopicTM:
 1. topic_model: topic model being used, g2t only
 2. word_select_method: approaches for selecting topic words
     1. tfidf_idfi(defalut)
