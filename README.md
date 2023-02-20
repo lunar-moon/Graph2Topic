@@ -6,10 +6,10 @@ python main.py --topic_model g2t --word_select_method tfidf_idfi --graph_method 
 
 1. topic_model: topic model being used, g2t only
 2. word_select_method: approaches for selecting topic words
-  1. tfidf_idfi(defalut)
-  2. tfidf_tfi
-  3. tfi
-  4. tfidfi
+    1. tfidf_idfi(defalut)
+    2. tfidf_tfi
+    3. tfi
+    4. tfidfi
 3. graph_method: approaches for finding topic communities
   1. k-components
   2. PLA
