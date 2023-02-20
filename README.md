@@ -11,14 +11,14 @@ python main.py --topic_model g2t --word_select_method tfidf_idfi --graph_method 
     3. tfi
     4. tfidfi
 3. graph_method: approaches for finding topic communities
-  1. k-components
-  2. PLA
-  3. greedy_modularity(defalut)
-  4. louvain
-  5. LFM
-  6. CPM
-  7. COPRA
-  8. SLPA
+    1. k-components
+    2. PLA
+    3. greedy_modularity(defalut)
+    4. louvain
+    5. LFM
+    6. CPM
+    7. COPRA
+    8. SLPA
 4. pretrained_model: PLMs for encoding texts, princeton-nlp/unsup-simcse-bert-base-uncased is recommended
 5. seed: random seed
 6. dataset: 20ng, m10, bbc, crr, beer, asap, nlpcc & nlpcc_c are provide
