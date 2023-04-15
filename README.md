@@ -1,8 +1,6 @@
 # Graph2Topic
 **Graph to Topic**(*G2T*) is a topic model based on PLMs and community detections. Our approach is able to get high quality topics without pre-specifying the number of topics. 
-![G2T](https://raw.githubusercontent.com/lunar-moon/Graph2Topic/v1.0/Images/Logo.png)
-
-![image](https://github.com/lunar-moon/Graph2Topic/blob/v1.0/Images/logo.png)
+![G2T](https://github.com/lunar-moon/Graph2Topic/blob/v1.0/Images/logo.png)
 !!!Attention: there some bugs in program, I will fix it at soon as possible
 ## Prepare:
 ```
