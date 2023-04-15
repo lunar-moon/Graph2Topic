@@ -1,10 +1,12 @@
 # Graph2Topic
-Graph2Topic(G2T) is a topic model based on PLMs and community detections. Our approach is able to get high quality topics without pre-specifying the number of topics. 
-
-<font color="#660066">!!!Attention: there some bugs in program, I will fix it at soon as possible</font>
+**Graph to Topic**(*G2T*) is a topic model based on PLMs and community detections. Our approach is able to get high quality topics without pre-specifying the number of topics. 
+![G2T]()
+!!!Attention: there some bugs in program, I will fix it at soon as possible
 ## Prepare:
+```
 pip install graph2topictm
 pip install 
+```
 ## Use example:
 ```
 from graph2topictm import graph2topictm
