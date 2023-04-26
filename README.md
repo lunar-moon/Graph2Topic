@@ -40,8 +40,8 @@ print(f'Topics: {topics}')
     7. COPRA
     8. SLPA
 2. pretrained_model: PLMs for encoding texts, default is *bert-base-uncased*. We *sentence-transformers* library to get docmemnts representation, most PLMs in [huggingface](https://huggingface.co/models) could be used in g2t:
-    +*princeton-nlp/unsup-simcse-bert-base-uncased* is recommended for **English** data;
-    +*cyclone/simcse-chinese-roberta-wwm-ext* is recommened for **Chinese** data;
+    1. *princeton-nlp/unsup-simcse-bert-base-uncased* is recommended for **English** data;
+    2. *cyclone/simcse-chinese-roberta-wwm-ext* is recommened for **Chinese** data;
 3. num_topics: number of topic would be showed, default is 10;
 4. dim_size: dimensions would be reduced, default is 5;
 ## Acknowledgement
