@@ -25,7 +25,7 @@ tm = Graph2TopicTM(dataset=data,
                 embedding='princeton-nlp/unsup-simcse-bert-base-uncased')
 prediction = tm.train()
 topics = tm.get_topics()
-print(f'Topics: {topics}')![image](https://user-images.githubusercontent.com/54792781/234463331-e3231a7b-659f-4466-97d0-84fe3db2b340.png)
+print(f'Topics: {topics}')
 
 ```
 
