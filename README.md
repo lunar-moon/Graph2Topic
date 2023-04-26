@@ -29,7 +29,7 @@ print(f'Topics: {topics}')
 
 ```
 
-## Parameter of Class Graph2TopicTM:
+## Parameter of Class *Graph2TopicTM*:
 1. graph_method: approaches for finding topic communities
     1. k-components
     2. PLA
