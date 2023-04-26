@@ -1,9 +1,0 @@
-octis
-umap-learn
-plotly
-flair
-numpy
-pandas
-gensim
-networkx
-sentence_transformers
