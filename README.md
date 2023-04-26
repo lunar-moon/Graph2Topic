@@ -1,40 +1,37 @@
-# Graph to Topic
+# Graph to Topic(G2T)
 ![G2T](https://github.com/lunar-moon/Graph2Topic/blob/v1.0/Images/logo.png)
 **Graph to Topic**(*G2T*) is a topic model based on PLMs and community detections. Our approach is able to get high quality topics without pre-specifying the number of topics.
 !!!Attention: there some bugs in program, I will fix it at soon as possible
 ## Prepare:
 ```
-pip install graph2topictm
-pip install 
+#Not necessary, but conda is recommended
+Conda create --n G2T python==3.9 
+Conda activate G2T  
+
+pip install graph2topictm -i https://pypi.org/simple
+pip install -r requirements.txt 
 ```
 ## Use example:
 ```
-from graph2topictm import graph2topictm
-import time
-from utils import *
+#get data
+data = []#A list of documents
+with open(r"./data/20NewsGroup/corpus.tsv","r",encoding='utf8')as f:
+    for line in f.readlines():
+        line = line.split('\t')[0]
+        data.append(line)
+f.close()
 
-dataset, sentences = prepare_dataset('bbc')
-print(f'Using dataset: {dataset}, number of documents: {len(sentences)}')
-
-token_lists = dataset.get_corpus()
-sentences = [' '.join(text_list) for text_list in token_lists]
-tm = graph2topictm.Graph2TopicTM(dataset=sentences, 
+from g2t.graph2topictm import Graph2TopicTM
+tm = Graph2TopicTM(dataset=data, 
                 embedding='princeton-nlp/unsup-simcse-bert-base-uncased')
-start_time = time.time()
-tm.train()
-train_time = time.time()
-print(f"Runtime of model:{round(train_time-start_time,4)}")
-td_score, cv_score, npmi_score = tm.evaluate()
+prediction = tm.train()
+topics = tm.get_topics()
+print(f'Topics: {topics}')![image](https://user-images.githubusercontent.com/54792781/234463331-e3231a7b-659f-4466-97d0-84fe3db2b340.png)
+
 ```
 
 ## Parameter of Class Graph2TopicTM:
-1. topic_model: topic model being used, g2t only
-2. word_select_method: approaches for selecting topic words
-    1. tfidf_idfi(defalut)
-    2. tfidf_tfi
-    3. tfi
-    4. tfidfi
-3. graph_method: approaches for finding topic communities
+1. graph_method: approaches for finding topic communities
     1. k-components
     2. PLA
     3. greedy_modularity(defalut)
@@ -43,9 +40,10 @@ td_score, cv_score, npmi_score = tm.evaluate()
     6. CPM
     7. COPRA
     8. SLPA
-4. pretrained_model: PLMs for encoding texts, princeton-nlp/unsup-simcse-bert-base-uncased is recommended
-5. seed: random seed
-6. dataset: A list of documents, some datasets(20ng, m10, bbc, crr, beer, asap, nlpcc & nlpcc_c) are provided
-7. num_topics: number of topic would be showed
-8. dim_size: dimensions would be reduced
-  
+2. pretrained_model: PLMs for encoding texts, default is *bert-base-uncased*. We *sentence-transformers* library to get docmemnts representation, most PLMs in [huggingface](https://huggingface.co/models) could be used in g2t. 
+    +*princeton-nlp/unsup-simcse-bert-base-uncased* is recommended for **English** data;
+    +*cyclone/simcse-chinese-roberta-wwm-ext* is recommened for **Chinese** data;
+3. num_topics: number of topic would be showed, default is 10;
+4. dim_size: dimensions would be reduced, default is 5;
+## Acknowledgement
+The code is implemented using [CETopic](https://github.com/hyintell/topicx)
