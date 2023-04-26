@@ -2,7 +2,7 @@
 ![G2T](https://github.com/lunar-moon/Graph2Topic/blob/v2.0/Images/logo.png)
 **Graph to Topic**(*G2T*) is a topic model based on PLMs and community detections. Our approach is able to get high quality topics without pre-specifying the number of topics.
 ## Prepare:
-```
+```python
 #Not necessary, but conda is recommended
 Conda create --n G2T python==3.9 
 Conda activate G2T  
