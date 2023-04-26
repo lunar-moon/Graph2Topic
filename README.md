@@ -11,7 +11,7 @@ pip install graph2topictm -i https://pypi.org/simple
 pip install -r requirements.txt 
 ```
 ## Use example:
-```
+```python
 #get data
 data = []#A list of documents
 with open(r"./data/20NewsGroup/corpus.tsv","r",encoding='utf8')as f:
