@@ -42,7 +42,7 @@ Topics: {0: [('faith', 0.015225980397721653), ('religion', 0.013505623953838575)
     6. CPM
     7. COPRA
     8. SLPA
-2. pretrained_model: PLMs for encoding texts, default is *bert-base-uncased*. We use *sentence-transformers* library to get docmemnts representation, most PLMs in [huggingface](https://huggingface.co/models) could be used in g2t:
+2. embedding: PLMs for encoding texts, default is *bert-base-uncased*. We use *sentence-transformers* library to get docmemnts representation, most PLMs in [huggingface](https://huggingface.co/models) could be used in g2t:
     1. *princeton-nlp/unsup-simcse-bert-base-uncased* is recommended for **English** data;
     2. *cyclone/simcse-chinese-roberta-wwm-ext* is recommened for **Chinese** data;
 3. num_topics: number of topic would be showed, default is 10;
